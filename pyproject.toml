@@ -1,0 +1,17 @@
+[project]
+name = "cs-fundamentals-practice"
+version = "0.1.0"
+description = "基礎的なアルゴリズム・設計・CS基礎の実装と考え方をまとめた学習ノート"
+requires-python = ">=3.12"
+# 実行コードは標準ライブラリのみ。ランタイム依存なし。
+dependencies = []
+
+[dependency-groups]
+# 開発用（テスト実行）。uv sync で入る。
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
