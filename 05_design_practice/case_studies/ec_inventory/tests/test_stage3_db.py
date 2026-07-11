@@ -10,7 +10,7 @@ import pytest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from stage3 import EcApp, OrderDB
+from stage3_db import EcApp, OrderDB
 
 
 @pytest.fixture

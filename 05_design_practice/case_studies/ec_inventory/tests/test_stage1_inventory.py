@@ -7,7 +7,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from stage1 import Inventory
+from stage1_inventory import Inventory
 
 
 def test_buy_within_stock_succeeds():

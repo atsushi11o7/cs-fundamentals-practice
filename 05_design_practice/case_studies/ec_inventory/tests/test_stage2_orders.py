@@ -7,7 +7,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from stage2 import Customer, Product, Shop
+from stage2_orders import Customer, Product, Shop
 
 
 def make_shop():
