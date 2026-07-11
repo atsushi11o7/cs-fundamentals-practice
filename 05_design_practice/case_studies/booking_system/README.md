@@ -40,7 +40,7 @@
   （→ `02_application_layer/interval_handling` の `overlaps` を再利用）。
 - 割り切り：リソースは1つ、単一スレッド前提。
 
-→ `stage1.py`（`RoomCalendar`）。まず動く核を作る。ここが議論と拡張の出発点。
+→ `stage1_single_resource.py`（`RoomCalendar`）。まず動く核を作る。ここが議論と拡張の出発点。
 
 ## Stage 2：複数リソースとデータモデル（要件が広がる）
 
@@ -55,7 +55,7 @@
 - `id` を振るのは、キャンセル時に「その1件」を一意に指すため（→ 主キーの発想）。
 - 重なり判定は**同じ `resource_id` の中だけ**で行う。別の部屋は同時刻でも独立。
 
-→ `stage2.py`（`BookingService`）。データ構造が育つと、機能追加が自然に載る。
+→ `stage2_multi_resource.py`（`BookingService`）。データ構造が育つと、機能追加が自然に載る。
 「データ設計が心臓部」を体感する段。
 
 ## Stage 3：並行アクセスと API（本番に近づける）
@@ -78,7 +78,7 @@ stage2 の `book()` は「重なりを確認 → 追加」の2手順。この間
   ```
   重なりは **409 Conflict** で返す（「今は競合している」を意味するコード）。
 
-→ `stage3.py`（`SafeBookingService` / `BookingApp`）。20スレッドが同じ枠を同時に狙っても、
+→ `stage3_concurrency_api.py`（`SafeBookingService` / `BookingApp`）。20スレッドが同じ枠を同時に狙っても、
 成功は1件だけ（二重予約が起きない）ことをテストで確認する。
 
 ---
@@ -107,5 +107,5 @@ stage2 の `book()` は「重なりを確認 → 追加」の2手順。この間
 
 ## 実装とテスト
 
-`stage1.py` / `stage2.py` / `stage3.py` と、それぞれの `tests/`。段階を追って読むと、
+`stage1_single_resource.py` / `stage2_multi_resource.py` / `stage3_concurrency_api.py` と、それぞれの `tests/`。段階を追って読むと、
 単純な核が要件に応じて育っていく過程がわかる。各段は独立して実行・テストできる。
