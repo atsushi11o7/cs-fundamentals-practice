@@ -28,7 +28,7 @@ for _path in (
 
 from interval_overlap import overlaps       # 02
 from rest_api import Router                 # 03
-from stage2 import Booking                  # 同じケースの stage2 のエンティティを再利用
+from stage2_multi_resource import Booking                  # 同じケースの stage2 のエンティティを再利用
 
 
 class SafeBookingService:

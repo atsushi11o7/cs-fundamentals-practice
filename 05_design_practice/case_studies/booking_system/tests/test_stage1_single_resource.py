@@ -7,7 +7,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from stage1 import RoomCalendar
+from stage1_single_resource import RoomCalendar
 
 
 def test_first_booking_succeeds():

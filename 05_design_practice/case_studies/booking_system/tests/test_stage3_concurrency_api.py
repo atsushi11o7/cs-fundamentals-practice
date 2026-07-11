@@ -8,7 +8,7 @@ import threading
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from stage3 import BookingApp, SafeBookingService
+from stage3_concurrency_api import BookingApp, SafeBookingService
 
 
 def test_create_returns_201():

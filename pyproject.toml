@@ -15,3 +15,5 @@ dev = [
 [tool.pytest.ini_options]
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
+# tmp/ は下書き用のスクラッチ（gitignore 対象）。テスト収集の対象外にする。
+addopts = "--ignore=tmp"

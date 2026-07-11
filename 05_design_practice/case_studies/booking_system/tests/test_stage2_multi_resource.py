@@ -7,7 +7,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from stage2 import BookingService
+from stage2_multi_resource import BookingService
 
 
 def test_book_returns_booking_with_id():
